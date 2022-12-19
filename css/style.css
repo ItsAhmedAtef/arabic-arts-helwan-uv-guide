@@ -2,7 +2,6 @@
     margin: 0;
     font-family: serif;
     padding: 0;
-    line-height: 24px;
 }
 
 header {
@@ -19,6 +18,7 @@ header div {
 #logo {
     display: flex;
     padding: 10px;
+    line-height: 22px;
 }
 
 #logo img {
@@ -69,10 +69,6 @@ noscript {
     padding: 20px 0;
 }
 
-#subject_content * {
-    line-height: normal;
-}
-
 #index img {
     width: 40px;
     height: 40px;
@@ -80,7 +76,7 @@ noscript {
 }
 
 #index h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 #index h2 {
@@ -91,6 +87,7 @@ noscript {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    line-height: 24px;
 }
 
 section {
