@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid #9e9e9e;
+}
+
+header div {
+    margin: auto;
+}
+
+#logo {
+    display: flex;
+    padding: 10px;
+}
+
+#logo img {
+    width: 50px;
+    height: 50px;
+    margin: auto 5px;
+}
+
+#logo h1 {
+    font-size: 22px;
+}
+
+#logo h2 {
+    font-size: 14px;
+}
+
+header ul {
+    cursor: pointer;
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline;
+    padding: 5px;
+}
+
+.active {
+    border: 1px solid;
+    border-radius: 7px;
+}
+
+/* start content */
+noscript {
+    color: red;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#index, #subject {
+    text-align: center;
+    padding: 20px;
+}
+
+#subject {
+    padding: 20px 0;
+}
+
+#index img {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+
+#index h1 {
+    margin-bottom: 10px;
+}
+
+#index h2 {
+    text-align: right;
+}
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 250px;
+    min-width: 250px;
+    height: 130px;
+    background-color: #ff5668;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 5px 10px #888888;
+}
+
+section .info {
+    flex-basis: 70%;
+    text-align: right;
+    position: relative;
+}
+
+section .info i {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+section .image {
+    flex-basis: 30%;
+    margin: 0 auto;
+}
+
+.go_home {
+    background-color: #003f95;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.container_subject {
+    margin-top: 30px;
+}
+
+.notes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.notes div {
+    display: block;
+    max-width: 130px;
+    background-color: yellow;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 4px 5px #888888;
+    cursor: pointer;
+}
+
+.notes div h3 {
+    text-align: right;
+}
+
+.tree {
+    direction: rtl;
+    text-align: right;
+}
+
+.tree li {
+    list-style-type: none;
+    margin: 10px;
+    position: relative;
+    margin-right: 30px;
+}
+
+.tree li::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 0 0 0px;
+    width: 19px;
+    height: 15px;
+}
+
+.tree li::after {
+    position: absolute;
+    content: "";
+    top: 6px;
+    right: -20px;
+    border-right: 1px solid #ccc;
+    border-radius: 0px 0 0 0;
+    width: 19px;
+    height: 100%;
+}
+
+ul.tree > li:first-child::before {
+    display: none;
+}
+
+ul.tree > li:first-child::after {
+    border-top: 1px solid #ccc;
+}
+
+.tree li:last-child::after  {
+    display: none;
+}
+
+.tree li div {
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.tree li div img {
+    width: 20px;
+    height: 20px;
+}
+
+.tree li div:hover, .tree li div:hover+ul li div,
+.tree li div:focus, .tree li div:focus+ul li div {
+    background: #ccc;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.tree li div:hover li::before,
+.tree li div:hover li::after,
+.tree li div:hover+ul li::before,
+.tree li div:hover+ul li::after {
+    border-color:  #000;
+}
+
+.tree div li {
+    padding-right: 2px;
+}
+/* end content */
+
+footer {
+    border-top: 1px solid #9e9e9e;
+    text-align: center;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 270px) {
+    * {
+        font-size: 18px;
+    }
+    #logo img {
+        width: 30px;
+        height: 30px;
+    }
+    #logo h1 {
+        font-size: 18px;
+    }
+    #logo h2 {
+        font-size: 12px;
+    }
+    #index img {
+        width: 20px;
+        height: 20px;
+    }
+}
