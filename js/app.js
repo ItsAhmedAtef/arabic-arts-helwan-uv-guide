@@ -13,7 +13,7 @@ const data = {
                 {
                     "content": "المحاضرة الثانية عشرة",
                     "at": "السبت 17/12/2022 08:00 ص",
-                    "image": "help"
+                    "image": "check"
                 },
                 {
                     "content": "المحاضرة الحادية عشرة",
@@ -264,3 +264,9 @@ document.body.addEventListener("click", (e) => {
         switch_page(e.target.parentElement.parentElement.id);
     }
 });
+
+window.addEventListener("keyup", (e) => {
+    alert(e.key);
+    if(e.key == "BrowserBack" || e.key == "Backspace") switch_page("index");
+    e.preventDefault();
+}, false);
