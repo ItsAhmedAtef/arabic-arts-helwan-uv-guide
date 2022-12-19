@@ -69,7 +69,7 @@ noscript {
     padding: 20px 0;
 }
 
-#subject_content {
+#subject_content * {
     line-height: normal;
 }
 
