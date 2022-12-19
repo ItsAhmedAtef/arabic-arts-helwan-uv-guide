@@ -69,6 +69,10 @@ noscript {
     padding: 20px 0;
 }
 
+#subject_content {
+    line-height: normal;
+}
+
 #index img {
     width: 40px;
     height: 40px;
