@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: serif;
     padding: 0;
 }
 
@@ -96,7 +97,7 @@ section {
     border-radius: 15px;
     width: 250px;
     min-width: 250px;
-    height: 130px;
+    height: 140px;
     background-color: #ff5668;
     color: #fff;
     cursor: pointer;
