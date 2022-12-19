@@ -178,7 +178,7 @@ const sections = document.querySelector(".sections");
 const index_page = document.querySelector("#index");
 const subject_page = document.querySelector("#subject");
 const subject_content = document.querySelector("#subject_content");
-let current_page = "index";
+let current_page = "";
 
 let html = [];
 for ( subject in data["subjects"] ) {
@@ -195,17 +195,16 @@ if (sections) sections.innerHTML = html.join(""); // fastest
 
 const switch_page = (p) => {
     if (index_page && subject_page && current_page != p) {
-        let pp = "index.html";
-        current_page = p;
         if (subjects.includes(p)) {
             // show subject data
             index_page.className = "hidden";
             subject_page.className = "";
-            pp += `?subject=${p}`;
             let html = [];
             let sub = data["subjects"][p];
             let last_update = sub.last_update? `<span>آخر تحديث: ${sub.last_update}</span>`: "";
             html.push(`<h1>مادة ${sub.name}</h1>${last_update}`);
+            if (current_page) window.history.pushState(null, null, `index.html?subject=${p}`);
+            document.title = sub.name + " - كلية الآداب قسم اللغة العربية جامعة حلوان";
             if (sub.notes && Object.values(sub.notes).length) {
                 html.push('<div class="container_subject"><h2>الملاحظات</h2><div class="notes">');
                 let count = 1;
@@ -245,8 +244,10 @@ const switch_page = (p) => {
             // show index page
             index_page.className = "";
             subject_page.className = "hidden";
+            if (current_page) window.history.pushState(null, null, "index.html");
+            document.title = "صفحة الطالب الجامعي - كلية الآداب قسم اللغة العربية جامعة حلوان";
         }
-        window.history.pushState(null, null, pp);
+        current_page = p;
     }
 };
 
