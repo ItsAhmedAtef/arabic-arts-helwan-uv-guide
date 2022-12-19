@@ -178,6 +178,7 @@ const sections = document.querySelector(".sections");
 const index_page = document.querySelector("#index");
 const subject_page = document.querySelector("#subject");
 const subject_content = document.querySelector("#subject_content");
+let current_page = "index";
 
 let html = [];
 for ( subject in data["subjects"] ) {
@@ -199,6 +200,7 @@ const switch_page = (p) => {
             // show subject data
             index_page.className = "hidden";
             subject_page.className = "";
+            current_page = p;
             pp += `?subject=${p}`;
             let html = [];
             let sub = data["subjects"][p];
@@ -243,6 +245,7 @@ const switch_page = (p) => {
             // show index page
             index_page.className = "";
             subject_page.className = "hidden";
+            current_page = "index";
         }
         window.history.replaceState(null, null, pp);
     }
@@ -266,7 +269,11 @@ document.body.addEventListener("click", (e) => {
 });
 
 window.addEventListener("keyup", (e) => {
-    alert(e.key);
-    if(e.key == "BrowserBack" || e.key == "Backspace") switch_page("index");
-    e.preventDefault();
+    if(["BrowserBack", "Backspace"].includes(e.key) && current_page != "index") switch_page("index");
 }, false);
+
+window.addEventListener("navigate", (e, data) => {
+    let direction = data.state.direction;
+    confirm(direction);
+    if (direction == "back" && current_page != "index") switch_page("index");
+});
