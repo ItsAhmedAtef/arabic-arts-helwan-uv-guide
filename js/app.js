@@ -194,13 +194,13 @@ for ( subject in data["subjects"] ) {
 if (sections) sections.innerHTML = html.join(""); // fastest
 
 const switch_page = (p) => {
-    if (index_page && subject_page) {
+    if (index_page && subject_page && current_page != p) {
         let pp = "index.html";
+        current_page = p;
         if (subjects.includes(p)) {
             // show subject data
             index_page.className = "hidden";
             subject_page.className = "";
-            current_page = p;
             pp += `?subject=${p}`;
             let html = [];
             let sub = data["subjects"][p];
@@ -245,16 +245,24 @@ const switch_page = (p) => {
             // show index page
             index_page.className = "";
             subject_page.className = "hidden";
-            current_page = "index";
         }
-        window.history.replaceState(null, null, pp);
+        window.history.pushState(null, null, pp);
     }
 };
 
-if (window.location.search) {
-    const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.has("subject")) switch_page(searchParams.get("subject"));
-}
+const detectChange = () => {
+    let page = "index";
+    if (window.location.search) {
+        const searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has("subject")) page = searchParams.get("subject");
+    }
+    switch_page(page);
+};
+detectChange();
+
+window.addEventListener("popstate", () => {
+    detectChange();
+});
 
 document.body.addEventListener("click", (e) => {
     if (e.target.classList.contains("go_home")) {
@@ -266,14 +274,4 @@ document.body.addEventListener("click", (e) => {
     } else if (e.target.parentElement && e.target.parentElement.parentElement && subjects.includes(e.target.parentElement.parentElement.id)) {
         switch_page(e.target.parentElement.parentElement.id);
     }
-});
-
-window.addEventListener("keyup", (e) => {
-    if(["BrowserBack", "Backspace"].includes(e.key) && current_page != "index") switch_page("index");
-}, false);
-
-window.addEventListener("navigate", (e, data) => {
-    let direction = data.state.direction;
-    confirm(direction);
-    if (direction == "back" && current_page != "index") switch_page("index");
 });
