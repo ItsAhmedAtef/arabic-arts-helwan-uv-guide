@@ -179,7 +179,7 @@ section .image {
     border-bottom: 1px solid #ccc;
     border-radius: 0 0 0 0px;
     width: 19px;
-    height: 15px;
+    height: 19px;
 }
 
 .tree li::after {
