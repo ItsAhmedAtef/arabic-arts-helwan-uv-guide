@@ -60,6 +60,10 @@ noscript {
     display: none !important;
 }
 
+.blue {
+    color: #003f95;
+}
+
 #index, #subject {
     text-align: center;
     padding: 20px;
