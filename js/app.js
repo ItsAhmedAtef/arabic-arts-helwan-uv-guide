@@ -351,6 +351,24 @@ let days = {
     "الخميس": []
 };
 
+const add_days = (professor, sub_name) => {
+    if (professor.days) {
+        for (let i of professor.days) {
+            if (days[i.day][i.time]) {
+                days[i.day][i.time].sub2 = sub_name;
+                days[i.day][i.time].prof2 = professor.name;
+                days[i.day][i.time].place2 = i.place;
+            } else {
+                days[i.day][i.time] = {
+                    sub1: sub_name,
+                    prof1: professor.name,
+                    place1: i.place
+                };
+            }
+        }
+    }
+};
+
 let html0 = [];
 let html1 = [];
 let html2 = [];
@@ -369,38 +387,10 @@ for ( subject in data["subjects"] ) {
     if (sections) {
         let last_update = sub.last_update? `<i>آخر تحديث: ${sub.last_update}</i>`: "";
         let professors = `<p>${sub.professor_1.name}</p>`;
-        if (sub.professor_1.days) {
-            for (let i of sub.professor_1.days) {
-                if (days[i.day][i.time]) {
-                    days[i.day][i.time].sub2 = sub.name;
-                    days[i.day][i.time].prof2 = sub.professor_1.name,
-                    days[i.day][i.time].place2 = i.place;
-                } else {
-                    days[i.day][i.time] = {
-                        sub1: sub.name,
-                        prof1: sub.professor_1.name,
-                        place1: i.place
-                    };
-                }
-            }
-        }
+        if (sub.professor_1.days) add_days(sub.professor_1, sub.name);
         if (sub.professor_2) {
             professors += `<p>${sub.professor_2.name}</p>`;
-            if (sub.professor_2.days) {
-                for (let i of sub.professor_2.days) {
-                    if (days[i.day][i.time]) {
-                        days[i.day][i.time].sub2 = sub.name;
-                        days[i.day][i.time].prof2 = sub.professor_2.name,
-                        days[i.day][i.time].place2 = i.place;
-                    } else {
-                        days[i.day][i.time] = {
-                            sub1: sub.name,
-                            prof1: sub.professor_2.name,
-                            place1: i.place
-                        };
-                    }
-                }
-            }
+            if (sub.professor_2.days) add_days(sub.professor_2, sub.name);
         }
         html2.push(`<section id="${subject}"><div class="image"><img src="img/books.png" alt="كتب" /></div><div class="info"><h2>${sub.name}</h2>${professors}${last_update}</div></section>`);
     }
