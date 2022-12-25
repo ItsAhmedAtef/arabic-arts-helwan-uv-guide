@@ -2,7 +2,16 @@ const data = {
     "subjects": {
         "grammer": {
             "name": "النحو والصرف",
-            "professor_1": "د/ منصور عبدالسميع", // max 2
+            "professor_1": {
+                "name": "د/ منصور عبدالسميع",
+                "days": [ // optional
+                    {                        
+                        "day": "السبت",
+                        "time": "08-10",
+                        "place": "مدرج 17و"
+                    }
+                ]
+            }, // max 2
             "last_update": "21/12/2022 18:47", // optional
             "notes": [
                 "الرجاء الإلتزام بالحضور مبكراً، كما أنه يتم سؤال المتأخرين ومناقشتهم",
@@ -37,7 +46,7 @@ const data = {
                     "at": "السبت 26/11/2022 08:00",
                     "inner": [
                         "<p>* الخط العثماني يختلف عما يُكتب به في هذا العصر في بعض المصطلحات.</p><p>* آمن ← (هي في الأصل) ← أَاْمَن</p><p>* سالَت هُذَيلٌ رَسولَ اللَهِ فاحِشَةً ← في هذا البيت الكلمة أصلها (سألت)، ولكن من باب التسهيل (سالت).</p><p>* عثمان، عفان ← يمنع من الصرف لأنها تكاد تكون أعجمية بسبب اللاحقة \"ان\" التي ادخلت من اللغة الفارسية.</p><p>* عربي، رومي ← (جمع بالحذف) ← عرب، روم.</p><p>* كلمة (فُلك) ← مفردها هو نفس جمعها.</p><p>* أسد ← (جمع بالإضافة) ← أسود<br/>↩ وقد تجمع أُسُد.</p><p>* آتى ← (المصدر) ← ايتاء.</p><p>* آلف ← إئتلاف.</p><p>* حسناء ← (يمكن أن نقول) ← حسنى (ممدود يمكن أن نيسره) (قصر الممدود)<br/>↩ تثنية ← حسناءان ← حسناوان (تقلب الهمزة).</p><p>* لا يجتمع تعريفان أو تأنيثان مثل: الرجل العلم (خطأ).</p><p>* صحراء ← (جمع مؤنث سالم) ← صحراءات ← صحراوات.</p><p>* خضراء ← (نسب) ← خضراءيّ أو خضراويّ.</p><p>* الكتابة اصطلاح، أي ما اتفق عليه الناس، لا شأن له بالقاعدة.</p><p>* رسالة ← رساالة ← رساال ← رسائل.</p><p>* قلادة ← قلاادة ← قلااد ← قلائد.</p><p>ضَارَب ← (مبني للمجهول) ← ضُورِب (في الأصل ضُارِب)<br/>↩ ولكن قلب (الألف) إلى (واو).</p><p>* آكل ← أُوكِل (فك الألف وقلب الثاني واو).</p><p>* شاعر ← (تصغير) ← شُايعر ← شويعر (قلب الألف).</p><p>* شاعرة ← شااعرة ← شااعر ← شواعر.</p><p>* جمع التكسير نقيض التصغير / (حمل النقيض على النقيض).</p>",
-                        "<p>- كتاب الإمالة.</p><p>- قطر الندي (ورقتين للأطفال) ← لابن هشام.</p><p>- كتاب علم الأصوات ← د/ كمال بشر.</p>",
+                        "<p>- كتاب الإمالة.</p><p>- قطر الندى (ورقتين للأطفال) ← لابن هشام.</p><p>- كتاب علم الأصوات ← د/ كمال بشر.</p>",
                         "<h4>تكليف</h4><ul><li>نأتي بالمصدر من: آجال / آتى / آلف / آذن / آذى</li><li>نأتي بالمبني للمجهول من: شارك / قاتل / عارض / حاكم / آكل / ناقش / شاعر</li><li>نأتي بالتصغير من: صانع / خادم / عامل / حامد / شاعر</li><li>نأتي بالجمع من: عطية / هدية / مطية / خطيئة</li></ul>"
                     ],
                     "image": "check"
@@ -99,14 +108,42 @@ const data = {
         },
         "history": {
             "name": "تاريخ مصر الحديث والمعاصر",
-            "professor_1": "د/ محمد صبري الدالي",
+            "professor_1": {
+                "name": "د/ محمد صبري الدالي",
+                "days": [
+                    {                        
+                        "day": "السبت",
+                        "time": "10-12",
+                        "place": "مدرج 17و"
+                    },
+                    {
+                        "day": "السبت",
+                        "time": "14-16",
+                        "place": "مدرج 17و"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "art": {
             "name": "الأدب الحديث ونصوصه",
-            "professor_1": "د/ عبدالله عبدالحليم",
+            "professor_1": {
+                "name": "د/ عبدالله عبدالحليم",
+                "days": [
+                    {                        
+                        "day": "السبت",
+                        "time": "12-14",
+                        "place": "مدرج 17ج"
+                    },
+                    {
+                        "day": "السبت",
+                        "time": "16-18",
+                        "place": "مدرج 17ج"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [
                 "الدكتور بيسيب حرية اختيار الأبيات، ويتم تحليلها تحليل بلاغي (أي استخراج المعاني والكنايات والاستعارات وشرح البيت...الخ)"
@@ -115,51 +152,135 @@ const data = {
         },
         "criticism": {
             "name": "النقد الأدبي الحديث",
-            "professor_1": "د/ صلاح السروي",
-            "professor_2": "د/ رشا صالح",
+            "professor_1": {
+                "name": "د/ صلاح السروي",
+                "days": [
+                    {                        
+                        "day": "الأحد",
+                        "time": "12-14",
+                        "place": "مدرج 17ط"
+                    }
+                ]
+            },
+            "professor_2": {
+                "name": "د/ رشا صالح",
+                "days": [
+                    {                        
+                        "day": "الأحد",
+                        "time": "08-10",
+                        "place": "مدرج 18و"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "interpretation": {
             "name": "اتجاهات التفسير في العصر الحديث",
-            "professor_1": "د/ عجمية براية",
+            "professor_1": {
+                "name": "د/ عجمية براية",
+                "days": [
+                    {                        
+                        "day": "الخميس",
+                        "time": "08-10",
+                        "place": "صالة 6"
+                    },
+                    {                        
+                        "day": "الخميس",
+                        "time": "10-12",
+                        "place": "صالة 6"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "english": {
             "name": "اللغة الأوروبية (إنجليزي)",
-            "professor_1": "د/ نبيلة رشاد",
+            "professor_1": {
+                "name": "د/ نبيلة رشاد",
+                "days": [
+                    {                        
+                        "day": "الخميس",
+                        "time": "12-14",
+                        "place": "فصول ومعامل ب18 - أ13"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "spanish": {
             "name": "اللغة الأوروبية (أسباني)",
-            "professor_1": "د/ علي أمين",
+            "professor_1": {
+                "name": "د/ علي أمين",
+                "days": [
+                    {                        
+                        "day": "الخميس",
+                        "time": "12-14",
+                        "place": "مدرج 17ح"
+                    },
+                    {                        
+                        "day": "الخميس",
+                        "time": "16-18",
+                        "place": "مدرج 17ح"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "turkish": {
             "name": "اللغة الشرقية (تركي)",
-            "professor_1": "د/ ندي عبدالمنعم",
+            "professor_1": {
+                "name": "د/ ندى عبدالمنعم",
+                "days": [
+                    {                        
+                        "day": "الأحد",
+                        "time": "10-12",
+                        "place": "مدرج 17ط"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "persian": {
             "name": "اللغة الشرقية (فارسي)",
-            "professor_1": "د/ رباب المحمدي",
+            "professor_1": {
+                "name": "د/ رباب المحمدي",
+                "days": [
+                    {                        
+                        "day": "الأحد",
+                        "time": "14-16",
+                        "place": "مدرج 2"
+                    }
+                ]
+            },
             "last_update": "",
             "notes": [],
             "events": []
         },
         "hebrew": {
             "name": "اللغة الشرقية (عبري)",
-            "professor_1": "د/ أبوالعزايم فرج",
-            "professor_2": "د/ نورهان خالد",
+            "professor_1": {
+                "name": "د/ أبوالعزايم فرج",
+                "days": [
+                    {                        
+                        "day": "الأحد",
+                        "time": "16-18",
+                        "place": "مدرج 17ط"
+                    }
+                ]
+            },
+            "professor_2": {
+                "name": "د/ نورهان خالد"
+            },
             "last_update": "",
             "notes": [],
             "events": []
@@ -172,19 +293,93 @@ const sections = document.querySelector(".sections");
 const index_page = document.querySelector("#index");
 const subject_page = document.querySelector("#subject");
 const subject_content = document.querySelector("#subject_content");
+const schedule_parent = document.querySelector("#schedule_parent");
 
-let html = [];
+let days = {
+    "السبت": [],
+    "الأحد": [],
+    "الإثنين": [],
+    "الثلاثاء": [],
+    "الأربعاء": [],
+    "الخميس": []
+};
+let html1 = [];
+let html2 = [];
 for ( subject in data["subjects"] ) {
     subjects.push(subject);
     let sub = data["subjects"][subject];
     if (sections) {
         let last_update = sub.last_update? `<i>آخر تحديث: ${sub.last_update}</i>`: "";
-        let professors = `<p>${sub.professor_1}</p>`;
-        if (sub.professor_2) professors += `<p>${sub.professor_2}</p>`;
-        html.push(`<section id="${subject}"><div class="info"><h2>${sub.name}</h2>${professors}${last_update}</div><div class="image"><img src="img/books.png" alt="كتب" /></div></section>`);
+        let professors = `<p>${sub.professor_1.name}</p>`;
+        if (sub.professor_1.days) {
+            for (let i of sub.professor_1.days) {
+                if (days[i.day][i.time]) {
+                    days[i.day][i.time].sub2 = sub.name;
+                    days[i.day][i.time].prof2 = sub.professor_1.name,
+                    days[i.day][i.time].place2 = i.place;
+                } else {
+                    days[i.day][i.time] = {
+                        sub1: sub.name,
+                        prof1: sub.professor_1.name,
+                        place1: i.place
+                    };
+                }
+            }
+        }
+        if (sub.professor_2) {
+            professors += `<p>${sub.professor_2.name}</p>`;
+            if (sub.professor_2.days) {
+                for (let i of sub.professor_2.days) {
+                    if (days[i.day][i.time]) {
+                        days[i.day][i.time].sub2 = sub.name;
+                        days[i.day][i.time].prof2 = sub.professor_2.name,
+                        days[i.day][i.time].place2 = i.place;
+                    } else {
+                        days[i.day][i.time] = {
+                            sub1: sub.name,
+                            prof1: sub.professor_2.name,
+                            place1: i.place
+                        };
+                    }
+                }
+            }
+        }
+        html2.push(`<section id="${subject}"><div class="image"><img src="img/books.png" alt="كتب" /></div><div class="info"><h2>${sub.name}</h2>${professors}${last_update}</div></section>`);
     }
 }
-if (sections) sections.innerHTML = html.join(""); // fastest
+
+for (let d in days) {
+    if (Object.keys(days[d]).length) {
+        html1.push(`<div><div class="mauto">${d}</div></div>`);
+        for (let x of ["08-10","10-12","12-14","14-16","16-18"]) {
+            if (!days[d][x]) days[d][x] = null;
+        }
+        for (let k of Object.keys(days[d]).sort()) {
+            if (days[d][k] != null) {
+                let sub1 = `<div class="mauto"><h4>${days[d][k].sub1}</h4><p>${days[d][k].prof1}</p><p>${days[d][k].place1}</p></div>`;
+                if (days[d][k].sub2 && days[d][k].prof2 && days[d][k].place2) {
+                    html1.push(`<div class="two_in_one">${sub1}<hr/><div class="mauto"><h4>${days[d][k].sub2}</h4><p>${days[d][k].prof2}</p><p>${days[d][k].place2}</p></div></div>`);
+                } else {
+                    if (html1[html1.length-1] == `<div>${sub1}</div>`) {
+                        html1[html1.length-1] = `<div class="grid2">${sub1}</div>`;
+                    } else {
+                        html1.push(`<div>${sub1}</div>`);
+                    }
+                }
+            } else {
+                html1.push('<div></div>');
+            }
+        }
+    }
+}
+
+if (html1.length) {
+    html1.unshift('<div id="schedule"><div></div><div>08 - 10</div><div>10 - 12</div><div>12 - 02</div><div>02 - 04</div><div>04 - 06</div>');
+    html1.push('</div>');
+}
+
+if (schedule_parent) schedule_parent.innerHTML = html1.length? html1.join(""): "<p>لا يوجد معلومات.</p>"; // fastest
+if (sections) sections.innerHTML = html2.length? html2.join(""): "<p>لا يوجد معلومات.</p>";
 
 const switch_page = (p) => {
     let url = "index.html";

@@ -64,6 +64,79 @@ noscript {
     color: #003f95;
 }
 
+#index, .tree {
+    direction: rtl;
+}
+
+#schedule_parent {
+    overflow: auto;
+    width: 100%;
+    margin: 20px auto;
+}
+
+#schedule {
+    display: inline-grid;
+    grid-template-columns: 80px repeat(5, 160px);
+    grid-template-rows: 30px repeat(3, 120px);
+    gap: 5px;
+}
+
+#schedule > div {
+    background-color: #c2c2c2;
+    color: #000;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.two_in_one {
+    padding: 0 !important;
+    font-size: 80%;
+}
+
+.two_in_one div {
+    padding: 5px;
+}
+
+.mauto {
+    margin: auto;
+}
+
+.grid2 {
+    grid-column-start: span 2;
+    grid-column-end: 4;
+}
+
+#schedule > div:first-child {
+    background-color: #fff !important;
+}
+
+#schedule > div:nth-child(2), #schedule > div:nth-child(3),
+#schedule > div:nth-child(4), #schedule > div:nth-child(5),
+#schedule > div:nth-child(6) {
+    background-color: #35363a !important;
+    color: #fff !important;
+}
+
+#schedule > div:nth-child(7) {
+    background-color: #54ebb1 !important;
+    color: #fff !important;
+}
+
+#schedule > div:nth-child(13) {
+    background-color: #f45d96 !important;
+    color: #fff !important;
+}
+
+#schedule > div:nth-child(19) {
+    background-color: #4598e6 !important;
+    color: #fff !important;
+}
+
 #index, #subject {
     text-align: center;
     padding: 20px;
@@ -163,7 +236,6 @@ section .image {
 }
 
 .tree {
-    direction: rtl;
     text-align: right;
 }
 
