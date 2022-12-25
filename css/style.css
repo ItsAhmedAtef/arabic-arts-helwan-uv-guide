@@ -95,7 +95,8 @@ noscript {
 
 .two_in_one {
     padding: 0 !important;
-    font-size: 80%;
+    font-size: 75%;
+    line-height: 16px;
 }
 
 .two_in_one div {
