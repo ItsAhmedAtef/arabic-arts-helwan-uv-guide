@@ -490,6 +490,11 @@ const switch_page = (p) => {
                 html.push(`<div class="container_subject"><p>!لا يوجد أحداث لعرضها</p></div>`);
             }
             if (subject_content) subject_content.innerHTML = html.join("");
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
         } else {
             // show index page
             index_page.className = "";
