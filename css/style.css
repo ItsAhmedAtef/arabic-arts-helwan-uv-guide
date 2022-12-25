@@ -68,6 +68,26 @@ noscript {
     direction: rtl;
 }
 
+#tests_schedule {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#tests_schedule div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    background-color: #35363a;
+    color: #fff;
+    border-radius: 10px;
+    width: 200px;
+    height: 80px;
+}
+
 #schedule_parent {
     overflow: auto;
     width: 100%;
@@ -79,6 +99,7 @@ noscript {
     grid-template-columns: 80px repeat(5, 160px);
     grid-template-rows: 30px repeat(3, 120px);
     gap: 5px;
+    line-height: 16px;
 }
 
 #schedule > div {
@@ -96,7 +117,6 @@ noscript {
 .two_in_one {
     padding: 0 !important;
     font-size: 75%;
-    line-height: 16px;
 }
 
 .two_in_one div {
@@ -192,7 +212,7 @@ section .info {
 
 section .info i {
     position: absolute;
-    right: -25%;
+    right: -30%;
     bottom: 0;
 }
 
