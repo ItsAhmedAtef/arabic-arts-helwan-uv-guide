@@ -1,19 +1,11 @@
 const data = {
-    "schedule_last_update": "25/12/2022 06:56 م",
     "subjects": {
         "grammer": {
             "name": "النحو والصرف",
             "professor_1": {
-                "name": "د/ منصور عبدالسميع",
-                "days": [ // optional
-                    {                        
-                        "day": "السبت",
-                        "time": "08-10",
-                        "place": "مدرج 17و"
-                    }
-                ]
-            }, // max 2
-            "last_update": "21/12/2022 06:47 م", // optional
+                "name": "د/ منصور عبدالسميع"
+            },
+            "last_update": "21/12/2022 06:47 م",
             "notes": [
                 "الرجاء الإلتزام بالحضور مبكراً، كما أنه يتم سؤال المتأخرين ومناقشتهم",
                 "كتاب شرح ابن عقيل الأربعة أجزاء موجودين في مكتبة الفتح بـ 120ج",
@@ -106,230 +98,6 @@ const data = {
                     "image": "check"
                 }
             ]
-        },
-        "history": {
-            "name": "تاريخ مصر الحديث والمعاصر",
-            "professor_1": {
-                "name": "د/ محمد صبري الدالي",
-                "days": [
-                    {                        
-                        "day": "السبت",
-                        "time": "10-12",
-                        "place": "مدرج 17و"
-                    },
-                    {
-                        "day": "السبت",
-                        "time": "14-16",
-                        "place": "مدرج 17و"
-                    }
-                ]
-            },
-            "test": {
-                "day": "09/01/2023",
-                "day_name": "الإثنين",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "art": {
-            "name": "الأدب الحديث ونصوصه",
-            "professor_1": {
-                "name": "د/ عبدالله عبدالحليم",
-                "days": [
-                    {                        
-                        "day": "السبت",
-                        "time": "12-14",
-                        "place": "مدرج 17ج"
-                    },
-                    {
-                        "day": "السبت",
-                        "time": "16-18",
-                        "place": "مدرج 17ج"
-                    }
-                ]
-            },
-            "test": {
-                "day": "05/01/2023",
-                "day_name": "الخميس",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [
-                "الدكتور بيسيب حرية اختيار الأبيات، ويتم تحليلها تحليل بلاغي (أي استخراج المعاني والكنايات والاستعارات وشرح البيت...الخ)"
-            ],
-            "events": []
-        },
-        "criticism": {
-            "name": "النقد الأدبي الحديث",
-            "professor_1": {
-                "name": "د/ صلاح السروي",
-                "days": [
-                    {                        
-                        "day": "الأحد",
-                        "time": "12-14",
-                        "place": "مدرج 17ط"
-                    }
-                ]
-            },
-            "professor_2": {
-                "name": "د/ رشا صالح",
-                "days": [
-                    {                        
-                        "day": "الأحد",
-                        "time": "08-10",
-                        "place": "مدرج 18و"
-                    }
-                ]
-            },
-            "test": {
-                "day": "12/01/2023",
-                "day_name": "الخميس",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "interpretation": {
-            "name": "اتجاهات التفسير في العصر الحديث",
-            "professor_1": {
-                "name": "د/ عجمية براية",
-                "days": [
-                    {                        
-                        "day": "الخميس",
-                        "time": "08-10",
-                        "place": "صالة 6"
-                    },
-                    {                        
-                        "day": "الخميس",
-                        "time": "10-12",
-                        "place": "صالة 6"
-                    }
-                ]
-            },
-            "test": {
-                "day": "02/01/2023",
-                "day_name": "الإثنين",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "english": {
-            "name": "اللغة الأوروبية (إنجليزي)",
-            "professor_1": {
-                "name": "د/ نبيلة رشاد",
-                "days": [
-                    {                        
-                        "day": "الخميس",
-                        "time": "12-14",
-                        "place": "فصول ومعامل ب18 - أ13"
-                    }
-                ]
-            },
-            "test": {
-                "day": "16/01/2023",
-                "day_name": "الإثنين",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "spanish": {
-            "name": "اللغة الأوروبية (أسباني)",
-            "professor_1": {
-                "name": "د/ علي أمين",
-                "days": [
-                    {                        
-                        "day": "الخميس",
-                        "time": "12-14",
-                        "place": "مدرج 17ح"
-                    },
-                    {                        
-                        "day": "الخميس",
-                        "time": "16-18",
-                        "place": "مدرج 17ح"
-                    }
-                ]
-            },
-            "test": {
-                "day": "16/01/2023",
-                "day_name": "الإثنين",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "turkish": {
-            "name": "اللغة الشرقية (تركي)",
-            "professor_1": {
-                "name": "د/ ندى عبدالمنعم",
-                "days": [
-                    {                        
-                        "day": "الأحد",
-                        "time": "10-12",
-                        "place": "مدرج 17ط"
-                    }
-                ]
-            },
-            "test": {
-                "day": "19/01/2023",
-                "day_name": "الخميس",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "persian": {
-            "name": "اللغة الشرقية (فارسي)",
-            "professor_1": {
-                "name": "د/ رباب المحمدي",
-                "days": [
-                    {                        
-                        "day": "الأحد",
-                        "time": "14-16",
-                        "place": "مدرج 2"
-                    }
-                ]
-            },
-            "test": {
-                "day": "19/01/2023",
-                "day_name": "الخميس",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
-        },
-        "hebrew": {
-            "name": "اللغة الشرقية (عبري)",
-            "professor_1": {
-                "name": "د/ أبوالعزايم فرج",
-                "days": [
-                    {                        
-                        "day": "الأحد",
-                        "time": "16-18",
-                        "place": "مدرج 17ط"
-                    }
-                ]
-            },
-            "professor_2": {
-                "name": "د/ نورهان خالد"
-            },
-            "test": {
-                "day": "19/01/2023",
-                "day_name": "الخميس",
-                "time": "12 - 02 م"
-            },
-            "last_update": "",
-            "notes": [],
-            "events": []
         }
     }
 };
@@ -338,101 +106,21 @@ const subjects = [];
 const sections = document.querySelector(".sections");
 const index_page = document.querySelector("#index");
 const subject_page = document.querySelector("#subject");
-const tests_schedule = document.querySelector("#tests_schedule");
-const subject_content = document.querySelector("#subject_content");
-const schedule_parent = document.querySelector("#schedule_parent");
 
-let days = {
-    "السبت": [],
-    "الأحد": [],
-    "الإثنين": [],
-    "الثلاثاء": [],
-    "الأربعاء": [],
-    "الخميس": []
-};
+let html = [];
 
-const add_days = (professor, sub_name) => {
-    if (professor.days) {
-        for (let i of professor.days) {
-            if (days[i.day][i.time]) {
-                days[i.day][i.time].sub2 = sub_name;
-                days[i.day][i.time].prof2 = professor.name;
-                days[i.day][i.time].place2 = i.place;
-            } else {
-                days[i.day][i.time] = {
-                    sub1: sub_name,
-                    prof1: professor.name,
-                    place1: i.place
-                };
-            }
-        }
-    }
-};
-
-let html0 = [];
-let html1 = [];
-let html2 = [];
 for ( subject in data["subjects"] ) {
     subjects.push(subject);
     let sub = data["subjects"][subject];
-    if (sub.test) {
-        let index = sub.test.day.split("/").reverse().join("");
-        if (html0[index]) {
-            let old_word = html0[index].split("(")[1].split(")")[0];
-            html0[index] = html0[index].replace(old_word, `${old_word} - ${sub.name.split("(")[1].split(")")[0]}`);
-        } else {
-            html0[index] = `<div><h5>${sub.name}</h5><p>${sub.test.day_name} ${sub.test.day}</p><p>${sub.test.time}</p></div>`;
-        }
-    }
     if (sections) {
         let last_update = sub.last_update? `<i>آخر تحديث: ${sub.last_update}</i>`: "";
         let professors = `<p>${sub.professor_1.name}</p>`;
-        if (sub.professor_1.days) add_days(sub.professor_1, sub.name);
-        if (sub.professor_2) {
-            professors += `<p>${sub.professor_2.name}</p>`;
-            if (sub.professor_2.days) add_days(sub.professor_2, sub.name);
-        }
-        html2.push(`<section id="${subject}"><div class="image"><img src="img/books.png" alt="كتب" /></div><div class="info"><h2>${sub.name}</h2>${professors}${last_update}</div></section>`);
+        if (sub.professor_2) professors += `<p>${sub.professor_2.name}</p>`;
+        html.push(`<section id="${subject}"><div class="image"><img src="img/books.png" alt="كتب" /></div><div class="info"><h2>${sub.name}</h2>${professors}${last_update}</div></section>`);
     }
 }
 
-for (let d in days) {
-    if (Object.keys(days[d]).length) {
-        html1.push(`<div><div class="mauto">${d}</div></div>`);
-        for (let x of ["08-10","10-12","12-14","14-16","16-18"]) {
-            if (!days[d][x]) days[d][x] = null;
-        }
-        for (let k of Object.keys(days[d]).sort()) {
-            if (days[d][k] != null) {
-                let sub1 = `<div class="mauto"><h4>${days[d][k].sub1}</h4><p>${days[d][k].prof1}</p><p>${days[d][k].place1}</p></div>`;
-                if (days[d][k].sub2 && days[d][k].prof2 && days[d][k].place2) {
-                    html1.push(`<div class="two_in_one">${sub1}<hr/><div class="mauto"><h4>${days[d][k].sub2}</h4><p>${days[d][k].prof2}</p><p>${days[d][k].place2}</p></div></div>`);
-                } else {
-                    if (html1[html1.length-1] == `<div>${sub1}</div>`) {
-                        html1[html1.length-1] = `<div class="grid2">${sub1}</div>`;
-                    } else {
-                        html1.push(`<div>${sub1}</div>`);
-                    }
-                }
-            } else {
-                html1.push('<div></div>');
-            }
-        }
-    }
-}
-
-if (tests_schedule) tests_schedule.innerHTML = Object.keys(html0).length? Object.values(html0).join(""): "<p>لا يوجد معلومات.</p>";
-if (html1.length) {
-    html1.unshift('<div id="schedule"><div></div><div>08 - 10</div><div>10 - 12</div><div>12 - 02</div><div>02 - 04</div><div>04 - 06</div>');
-    html1.push('</div>');
-}
-if (schedule_parent) {
-    schedule_parent.innerHTML = html1.length? html1.join(""): "<p>لا يوجد معلومات.</p>"; // fastest
-    if (data["schedule_last_update"]) {
-        schedule_parent.insertAdjacentHTML("beforebegin",`<p>آخر تحديث: ${data["schedule_last_update"]}</p>`);
-    }
-}
-if (sections) sections.innerHTML = html2.length? html2.join(""): "<p>لا يوجد معلومات.</p>";
+if (sections) sections.innerHTML = html.length? html.join(""): "<p>لا يوجد معلومات.</p>";
 
 const switch_page = (p) => {
     let url = "index.html";
