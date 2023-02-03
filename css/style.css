@@ -95,6 +95,7 @@ noscript {
 
 a, a:hover, a:link {
     text-decoration: none !important;
+    color: unset;
 }
 
 .subject {
@@ -187,11 +188,15 @@ a, a:hover, a:link {
     vertical-align: bottom;
 }
 
-.notes {
+#docs, .notes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+#docs a {
+    margin-top: 20px;
 }
 
 .notes div {

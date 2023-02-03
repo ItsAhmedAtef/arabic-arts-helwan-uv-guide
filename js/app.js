@@ -5,6 +5,13 @@ const data = {
             professors: [
                 "د/ منصور عبدالسميع"
             ],
+            documents: [
+                {
+                    title: "المقرر الإلكتروني",
+                    type: "pdf",
+                    path: "pdf/مقرر%20النحو%20والصرف%20لطلاب%20الفرقة%20الرابعة%20قسم%20اللغة%20العربية%202022_2023.pdf"
+                }
+            ],
             notes: [
                 "الرجاء الإلتزام بالحضور مبكراً، كما أنه يتم سؤال المتأخرين ومناقشتهم.",
                 "كتاب شرح ابن عقيل (الأربعة أجزاء) موجود في مكتبة الفتح بـ 120ج.",
@@ -108,6 +115,14 @@ const switchPage = (page) => {
             document.title = subject.name + " - كلية الآداب قسم اللغة العربية جامعة حلوان 2022/2023";
             let last_update = subject.last_update? `<span>آخر تحديث: ${subject.last_update.date} ${subject.last_update.time} <img id="refresh" alt="أيقونة التحديث" src="img/refresh.png"></span>`: "";
             html.push(`<h1>مادة ${subject.name}</h1>${last_update}`);
+
+            if (subject.documents && subject.documents.length) {
+                html.push('<div class="subject_section"><h2>المستندات الإلكترونية</h2><div id="docs">');
+                for (let document of subject.documents) {
+                    html.push(`<a target="_blank" href="${document.path}"><img src="img/${document.type}.png" alt="أيقونة المستند الإلكتروني"><p><strong>${document.title}</strong></p></a>`);
+                }
+                html.push("</div></div>");
+            }
 
             html.push('<div class="subject_section"><h2>الملاحظات</h2>');
             if (subject.notes && subject.notes.length) {
