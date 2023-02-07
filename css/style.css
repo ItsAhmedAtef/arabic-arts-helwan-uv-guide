@@ -181,7 +181,8 @@ a, a:hover, a:link {
 
 .subject_section {
     margin-top: 30px;
-    overflow-wrap: anywhere;
+    overflow-wrap: anywhere; /* not supprted by safari */
+    word-break: break-word;
 }
 
 #refresh {

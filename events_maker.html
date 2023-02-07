@@ -25,6 +25,7 @@
             flex-direction: column;
         }
         textarea {
+            font-family: 'Courier New', Courier, monospace;
             display: block;
             width: 500px;
             height: 150px;
@@ -37,6 +38,7 @@
             border: 1px #ccc solid;
             border-radius: 5px;
             display: inline-block;
+            margin-bottom: 20px;
             padding: 5px;
             direction: rtl;
             text-align: right;
@@ -74,8 +76,8 @@
     </header>
     <div id="content">
         <textarea placeholder="Enter HTML here" title="Enter HTML here" id="input"></textarea>
-        <textarea placeholder="Validated event HTML output" title="Validated event HTML output" id="output"></textarea>
         <div class="center"><div id="view"></div></div>
+        <textarea placeholder="Validated event HTML output" title="Validated event HTML output" id="output"></textarea>
         <div class="center">
             <img id="copy" src="img/copy.png" alt="copy icon">
             <a target="_blank" href="https://validator.w3.org/#validate_by_input">The W3C Markup Validation Service</a>
@@ -101,6 +103,8 @@
                 val = val.trim();
                 val = val.replace(/  +/g, " ");
                 val = val.replace(/>\ /g, ">");
+                val = val.replace(/<br\/>/g, "<br>");
+                val = val.replace(/<br \/>/g, "<br>");
                 output.value = val;
 
                 val = val.replace(/\*/g, '<span class="blue">*</span>');
@@ -114,6 +118,15 @@
                 navigator.clipboard.writeText('<!DOCTYPE html><html lang="ar"><head><title>title</title></head><body>' + output.value + '</body></html>');
                 alert("Copied!");
             });
+        }
+
+        window.onbeforeunload = (e) => {
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Sure?';
+            }
+            // For Safari
+            return 'Sure?';
         }
     </script>
 </body>
