@@ -92,6 +92,16 @@
         </div>
     </footer>
     <script>
+        const beforeUnloadListener = (e) => {
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.preventDefault();
+                e.returnValue = "Are you sure you want to exit?";
+            }
+            // For Safari
+            return "Are you sure you want to exit?";
+        }
+
         const input = document.querySelector("#input");
         const output = document.querySelector("#output");
         const view = document.querySelector("#view");
@@ -111,6 +121,12 @@
                 val = val.replace(/←/g, '<span class="blue">←</span>');
                 val = val.replace(/↩/g, '<span class="blue">↩</span>');
                 view.innerHTML = val;
+
+                if (val !== "") {
+                    addEventListener("beforeunload", beforeUnloadListener, { capture: true });
+                } else {
+                    removeEventListener("beforeunload", beforeUnloadListener, { capture: true });
+                }
             });
             copy.addEventListener("click", () => {
                 output.select();
@@ -118,15 +134,6 @@
                 navigator.clipboard.writeText('<!DOCTYPE html><html lang="ar"><head><title>title</title></head><body>' + output.value + '</body></html>');
                 alert("Copied!");
             });
-        }
-
-        window.onbeforeunload = (e) => {
-            // For IE and Firefox prior to version 4
-            if (e) {
-                e.returnValue = 'Sure?';
-            }
-            // For Safari
-            return 'Sure?';
         }
     </script>
 </body>
