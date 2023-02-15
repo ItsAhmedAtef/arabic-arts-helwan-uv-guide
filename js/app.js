@@ -203,6 +203,7 @@ const data = {
 };
 
 const index_page = document.querySelector("#index");
+const study_schedule = document.querySelector("#study_schedule");
 const subjects_div = document.querySelector("#subjects");
 
 const subject_page = document.querySelector("#subject");
@@ -210,7 +211,7 @@ const subject_content = document.querySelector("#subject_content");
 
 const switchPage = (page) => {
     let html = [];
-    if (index_page && subjects_div && subject_page && subject_content) {
+    if (index_page && study_schedule && subjects_div && subject_page && subject_content) {
         if (page in data.subjects) {
             // Show Subject data
             index_page.className = "hidden";
@@ -218,7 +219,13 @@ const switchPage = (page) => {
             let subject = data["subjects"][page];
             document.title = subject.name + " - كلية الآداب قسم اللغة العربية جامعة حلوان 2022/2023";
             let last_update = subject.last_update? `<span>آخر تحديث: ${subject.last_update.date} ${subject.last_update.time} <img id="refresh" alt="أيقونة التحديث" src="img/refresh.png"></span>`: "";
-            html.push(`<h1>مادة ${subject.name}</h1>${last_update}`);
+            let professors = "";
+            if (subject.professors && subject.professors.length) {
+                for (let professor of subject.professors) {
+                    professors += `<p>${professor}</p>`;
+                }
+            }
+            html.push(`<h1>مادة ${subject.name}</h1>${professors}${last_update}`);
 
             if (subject.documents && subject.documents.length) {
                 html.push('<div class="subject_section"><h2>المستندات الإلكترونية</h2><div id="docs">');
@@ -289,6 +296,7 @@ const switchPage = (page) => {
                 let last_update = subject.last_update? `<div class="last_update"><div><i><img src="img/refresh.png" alt="أيقونة التحديث">${subject.last_update.time}</i><i>${subject.last_update.date}</i></div></div>`: "";
                 html.push(`<a href="index.html?subject=${subject_name}"><div class="subject"><div><img src="img/books.png" alt="أيقونة كُتب"><h2>${subject.name}</h2></div>${professors}${last_update}</div></a>`);
             }
+            study_schedule.innerHTML = `<h2>الجدول الدراسي</h2><div id="study_schedule_container"><table><thead><tr><th></th><th colspan="2">08 - 10</th><th colspan="2">10 - 12</th><th colspan="2">12 - 02</th><th colspan="2">02 - 04</th><th colspan="2">04 - 06</th></tr></thead><tbody><tr><td><h3>السبت</h3></td><td colspan="4"><div><h4>${data["subjects"]["grammer"].name}</h4><p>${data["subjects"]["grammer"].professors[0]}</p><strong>م17ج</strong></div></td><td colspan="4"><div><h4>${data["subjects"]["modern_literature_poetry"].name}</h4><p>${data["subjects"]["modern_literature_poetry"].professors[0]}</p><strong>م17ج</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["research_methods"].name}</h4><p>${data["subjects"]["research_methods"].professors[0]}</p><strong>م17ج</strong></div></td></tr><tr><td><h3>الأربعاء</h3></td><td colspan="2"><div><h4>${data["subjects"]["comparative_literature"].name}</h4><p>${data["subjects"]["comparative_literature"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["modern_literature_prose"].name}</h4><p>${data["subjects"]["modern_literature_prose"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["comparative_literature"].name}</h4><p>${data["subjects"]["comparative_literature"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["popular_literature"].name}</h4><p>${data["subjects"]["popular_literature"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["modern_literature_prose"].name}</h4><p>${data["subjects"]["modern_literature_prose"].professors[1]}</p><strong>م18و</strong></div></td></tr><tr><td><h3>الخميس</h3></td><td colspan="2"></td><td colspan="4"><div><h4>${data["subjects"]["criticism"].name}</h4><p>${data["subjects"]["criticism"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["popular_literature"].name}</h4><p>${data["subjects"]["popular_literature"].professors[0]}</p><strong>م18و</strong></div></td><td colspan="2"><div><h4>${data["subjects"]["research_methods"].name}</h4><p>${data["subjects"]["research_methods"].professors[1]}</p><strong>م18و</strong></div></td></tr></tbody></table></div><span>آخر تحديث: 15/02/2023 02:30 ص <img id="refresh" alt="أيقونة التحديث" src="img/refresh.png"></span>`;
             subjects_div.innerHTML = html.length? html.join(""): "<p>لا توجد معلومات.</p>";
         }
     }
