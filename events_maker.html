@@ -112,7 +112,6 @@
                 val = val.replace(/\n/g, "");
                 val = val.trim();
                 val = val.replace(/  +/g, " ");
-                val = val.replace(/>\ /g, ">");
                 val = val.replace(/<br\/>/g, "<br>");
                 val = val.replace(/<br \/>/g, "<br>");
                 output.value = val;
